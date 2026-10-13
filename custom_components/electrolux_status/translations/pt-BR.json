@@ -122,6 +122,48 @@
             "latam_water_reuse": {
                 "name": "Reuso de água"
             }
+        },
+        "climate": {
+            "air_conditioner": {
+                "state_attributes": {
+                    "fan_mode": {
+                        "state": {
+                            "auto": "Automático",
+                            "low": "Baixa",
+                            "medium": "Média",
+                            "high": "Alta",
+                            "turbo": "Turbo"
+                        }
+                    },
+                    "swing_mode": {
+                        "state": {
+                            "on": "Oscilar",
+                            "off": "Parada",
+                            "position_0": "Posição 0",
+                            "position_1": "Posição 1",
+                            "position_2": "Posição 2",
+                            "position_3": "Posição 3",
+                            "position_4": "Posição 4",
+                            "position_5": "Posição 5",
+                            "position_6": "Posição 6"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "none": "Nenhum",
+                            "sleep": "Dormir",
+                            "comfort": "Conforto",
+                            "auto_sense": "Auto Sense"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "climate_migration": {
+            "title": "{appliance} agora é uma entidade de clima",
+            "description": "Os controles do ar-condicionado {appliance} foram para {climate}. Estas entidades não são mais fornecidas e podem ser removidas na página do dispositivo: {entities}. Automações e painéis que usavam elas devem chamar as ações de clima, como climate.set_hvac_mode, climate.set_temperature, climate.set_fan_mode, climate.set_swing_mode e climate.set_preset_mode."
         }
     }
 }
