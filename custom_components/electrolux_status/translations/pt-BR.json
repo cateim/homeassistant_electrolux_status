@@ -57,11 +57,32 @@
             },
             "command_stopreset": {
                 "name": "Parar e reiniciar"
+            },
+            "air_filter_state_reset": {
+                "name": "Zerar filtro de ar"
+            },
+            "water_filter_state_reset": {
+                "name": "Zerar filtro de água"
             }
         },
         "number": {
             "latam_advance_phase": {
                 "name": "Avançar etapa"
+            },
+            "freezer_target_temperature_c": {
+                "name": "Temperatura alvo do freezer (°C)"
+            },
+            "fridge_target_temperature_c": {
+                "name": "Temperatura alvo da geladeira (°C)"
+            },
+            "start_time": {
+                "name": "Início programado"
+            },
+            "stop_time": {
+                "name": "Desligamento programado"
+            },
+            "target_temperature_c": {
+                "name": "Temperatura alvo (°C)"
             }
         },
         "select": {
@@ -93,6 +114,27 @@
                     "high_to_duvet": "Alto / edredom",
                     "duvet": "Edredom"
                 }
+            },
+            "analog_spin_speed": {
+                "name": "Velocidade de centrifugação"
+            },
+            "analog_temperature": {
+                "name": "Temperatura da lavagem"
+            },
+            "default_extra_rinse": {
+                "name": "Enxágue extra padrão"
+            },
+            "end_of_cycle_sound": {
+                "name": "Som de fim de ciclo"
+            },
+            "extra_cavity_clone_target_temperature_mode": {
+                "name": "Modo do compartimento extra"
+            },
+            "extra_cavity_target_temperature_c": {
+                "name": "Temperatura alvo do compartimento extra (°C)"
+            },
+            "sound_volume": {
+                "name": "Volume"
             }
         },
         "sensor": {
@@ -107,6 +149,195 @@
             },
             "latam_counter_preventive": {
                 "name": "Ciclos desde a manutenção preventiva"
+            },
+            "air_filter_life_time": {
+                "name": "Vida útil do filtro de ar"
+            },
+            "air_filter_life_time_buy_threshold": {
+                "name": "Aviso de compra do filtro de ar"
+            },
+            "air_filter_life_time_change_threshold": {
+                "name": "Aviso de troca do filtro de ar"
+            },
+            "air_filter_state": {
+                "name": "Estado do filtro de ar"
+            },
+            "alerts": {
+                "name": "Alertas"
+            },
+            "ambient_temperature_c": {
+                "name": "Temperatura ambiente (°C)"
+            },
+            "appliance_mode": {
+                "name": "Modo do aparelho"
+            },
+            "appliance_state": {
+                "name": "Estado"
+            },
+            "appliance_total_working_time": {
+                "name": "Tempo total de uso"
+            },
+            "clean_air_mode": {
+                "name": "Modo ar limpo"
+            },
+            "connectivity_state": {
+                "name": "Conexão"
+            },
+            "current_energy_use_percent": {
+                "name": "Uso de energia atual"
+            },
+            "cycle_phase": {
+                "name": "Fase do ciclo"
+            },
+            "cycle_sub_phase": {
+                "name": "Subfase do ciclo"
+            },
+            "defrost_routine_state": {
+                "name": "Degelo"
+            },
+            "defrost_temperature": {
+                "name": "Temperatura de descongelamento"
+            },
+            "display_food_probe_temperature": {
+                "name": "Temperatura da sonda"
+            },
+            "display_temperature": {
+                "name": "Temperatura no visor"
+            },
+            "eco2": {
+                "name": "eCO2"
+            },
+            "evaporator_defrost_state": {
+                "name": "Degelo do evaporador"
+            },
+            "extra_cavity_alerts": {
+                "name": "Alertas do compartimento extra"
+            },
+            "extra_cavity_temperature_adjusting_state": {
+                "name": "Ajuste de temperatura do compartimento extra"
+            },
+            "filter_life": {
+                "name": "Vida útil do filtro"
+            },
+            "filter_state": {
+                "name": "Estado do filtro"
+            },
+            "filter_type": {
+                "name": "Tipo de filtro"
+            },
+            "freezer_alerts": {
+                "name": "Alertas do freezer"
+            },
+            "freezer_fast_mode_time_to_end": {
+                "name": "Tempo restante do congelamento rápido"
+            },
+            "fridge_alerts": {
+                "name": "Alertas da geladeira"
+            },
+            "fridge_fast_mode_time_to_end": {
+                "name": "Tempo restante do resfriamento rápido"
+            },
+            "humidity": {
+                "name": "Umidade"
+            },
+            "ice_maker_alerts": {
+                "name": "Alertas da máquina de gelo"
+            },
+            "ice_maker_defrost_temperature_c": {
+                "name": "Temperatura de degelo da máquina de gelo (°C)"
+            },
+            "ice_maker_defrost_temperature_f": {
+                "name": "Temperatura de degelo da máquina de gelo (°F)"
+            },
+            "ice_maker_ice_dispenser_state": {
+                "name": "Dispensador de gelo"
+            },
+            "ice_maker_ice_tray_water_fill_setting": {
+                "name": "Água da forma de gelo"
+            },
+            "network_interface_link_quality_indicator": {
+                "name": "Qualidade do sinal"
+            },
+            "oven_process_identifier": {
+                "name": "Processo do forno"
+            },
+            "pm1": {
+                "name": "PM1"
+            },
+            "pm10": {
+                "name": "PM10"
+            },
+            "pm2_5": {
+                "name": "PM2,5"
+            },
+            "program_uid": {
+                "name": "Programa"
+            },
+            "reminder_time": {
+                "name": "Lembrete"
+            },
+            "remote_control": {
+                "name": "Controle remoto"
+            },
+            "running_time": {
+                "name": "Tempo de funcionamento"
+            },
+            "sensor_temperature": {
+                "name": "Temperatura do sensor"
+            },
+            "steam_value": {
+                "name": "Vapor"
+            },
+            "target_microwave_power": {
+                "name": "Potência do micro-ondas"
+            },
+            "target_temperature_f": {
+                "name": "Temperatura alvo (°F)"
+            },
+            "temperature": {
+                "name": "Temperatura"
+            },
+            "time_to_end": {
+                "name": "Tempo restante"
+            },
+            "total_cycle_counter": {
+                "name": "Total de ciclos"
+            },
+            "total_washing_time": {
+                "name": "Tempo total de lavagem"
+            },
+            "tvoc": {
+                "name": "TVOC"
+            },
+            "water_filter_flow": {
+                "name": "Volume filtrado"
+            },
+            "water_filter_flow_buy_threshold": {
+                "name": "Aviso de compra do filtro de água (volume)"
+            },
+            "water_filter_flow_change_threshold": {
+                "name": "Aviso de troca do filtro de água (volume)"
+            },
+            "water_filter_life_time": {
+                "name": "Vida útil do filtro de água"
+            },
+            "water_filter_life_time_buy_threshold": {
+                "name": "Aviso de compra do filtro de água (tempo)"
+            },
+            "water_filter_life_time_change_threshold": {
+                "name": "Aviso de troca do filtro de água (tempo)"
+            },
+            "water_filter_state": {
+                "name": "Estado do filtro de água"
+            },
+            "water_hardness": {
+                "name": "Dureza da água"
+            },
+            "water_level": {
+                "name": "Nível de água"
+            },
+            "water_softener_mode": {
+                "name": "Modo do abrandador de água"
             }
         },
         "switch": {
@@ -121,6 +352,33 @@
             },
             "latam_water_reuse": {
                 "name": "Reuso de água"
+            },
+            "batch_scheduler_mode": {
+                "name": "Agendamento"
+            },
+            "child_lock_external": {
+                "name": "Trava infantil externa"
+            },
+            "child_lock_internal": {
+                "name": "Trava infantil interna"
+            },
+            "freezer_fast_mode": {
+                "name": "Congelamento rápido"
+            },
+            "fridge_fast_mode": {
+                "name": "Resfriamento rápido"
+            },
+            "ice_maker": {
+                "name": "Máquina de gelo"
+            },
+            "ui_2lock_mode": {
+                "name": "Trava do painel 2"
+            },
+            "ui_lock_mode": {
+                "name": "Trava do painel"
+            },
+            "vacation_holiday_mode": {
+                "name": "Modo férias"
             }
         },
         "climate": {
@@ -157,6 +415,53 @@
                         }
                     }
                 }
+            }
+        },
+        "binary_sensor": {
+            "door_lock": {
+                "name": "Trava da porta"
+            },
+            "door_open": {
+                "name": "Porta aberta"
+            },
+            "door_state": {
+                "name": "Porta"
+            },
+            "extra_cavity_appliance_state": {
+                "name": "Estado do compartimento extra"
+            },
+            "extra_cavity_door_state": {
+                "name": "Porta do compartimento extra"
+            },
+            "extra_cavity_fan_state": {
+                "name": "Ventilador do compartimento extra"
+            },
+            "freezer_appliance_state": {
+                "name": "Estado do freezer"
+            },
+            "freezer_door_state": {
+                "name": "Porta do freezer"
+            },
+            "fridge_appliance_state": {
+                "name": "Estado da geladeira"
+            },
+            "fridge_door_state": {
+                "name": "Porta da geladeira"
+            },
+            "ice_maker_appliance_state": {
+                "name": "Estado da máquina de gelo"
+            },
+            "ice_maker_evaporator_fan_state": {
+                "name": "Ventilador da máquina de gelo"
+            },
+            "pre_wash_phase": {
+                "name": "Pré-lavagem"
+            },
+            "tank_a_reserve": {
+                "name": "Reserva do tanque A"
+            },
+            "tank_b_reserve": {
+                "name": "Reserva do tanque B"
             }
         }
     },

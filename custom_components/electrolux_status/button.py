@@ -62,6 +62,8 @@ class ElectroluxButton(ElectroluxEntity, ButtonEntity):
         val_to_send: str,
     ) -> None:
         """Initialize the Button Entity."""
+        # Set first: the derived name key reads it through _fallback_name.
+        self.val_to_send = val_to_send
         super().__init__(
             coordinator=coordinator,
             capability=capability,
@@ -78,7 +80,6 @@ class ElectroluxButton(ElectroluxEntity, ButtonEntity):
             icon=icon,
             catalog_entry=catalog_entry,
         )
-        self.val_to_send = val_to_send
         if entity_attr == "executeCommand" and not entity_source and str(val_to_send).upper() in TRANSLATED_COMMANDS:
             self._attr_translation_key = f"command_{str(val_to_send).lower()}"
 
@@ -92,11 +93,8 @@ class ElectroluxButton(ElectroluxEntity, ButtonEntity):
         """Return a unique ID to use for this entity."""
         return f"{self.config_entry.entry_id}-{self.val_to_send}-{self.entity_attr}-{self.entity_source or 'root'}-{self.pnc_id}"
 
-    @property
-    def name(self) -> str:
-        """Return the name of the sensor."""
-        if self.translation_key and self.platform_data:
-            return super().name
+    def _fallback_name(self) -> str:
+        """Return the generated English name: the attribute name plus the command it sends."""
         name = self._name
         if self.catalog_entry and self.catalog_entry.friendly_name:
             name = f"{self.get_appliance.name} {self.catalog_entry.friendly_name.lower()}"

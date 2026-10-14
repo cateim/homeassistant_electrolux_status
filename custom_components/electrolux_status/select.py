@@ -93,7 +93,7 @@ class ElectroluxSelect(ElectroluxEntity, SelectEntity):
         """Convert input to label string value."""
         if value is None:
             return None
-        if self.translation_key:
+        if self.catalog_entry and self.catalog_entry.translation_key:
             # The option is the translation key, and Home Assistant shows the translated label
             return str(value).lower()
         if isinstance(value, str):

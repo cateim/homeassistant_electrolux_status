@@ -19,6 +19,17 @@ from .model import ElectroluxDevice
 _LOGGER: logging.Logger = logging.getLogger(__package__)
 
 
+def name_translation_key(name: str | None) -> str | None:
+    """Return the translation key for an entity whose generated English name is name.
+
+    The generated name already comes from the attribute (container included), so the key is that
+    name in lowercase with anything outside a-z and 0-9 turned into single underscores.
+    """
+    if not name:
+        return None
+    return re.sub(r"_+", "_", re.sub(r"[^a-z0-9]", "_", name.lower())).strip("_") or None
+
+
 async def async_setup_entry(
     hass: HomeAssistant,
     entry: ConfigEntry,
@@ -97,6 +108,10 @@ class ElectroluxEntity(CoordinatorEntity):
             self.entity_registry_enabled_default = catalog_entry.entity_registry_enabled_default
             if catalog_entry.translation_key:
                 self._attr_translation_key = catalog_entry.translation_key
+        if getattr(self, "_attr_translation_key", None) is None:
+            # Every other entity is named through a key derived from its generated English name,
+            # so translating it only takes a line in each language file.
+            self._attr_translation_key = name_translation_key(self._fallback_name())
         _LOGGER.debug("Electrolux new entity %s for appliance %s", name, pnc_id)
 
     def setup(self, data):
@@ -174,12 +189,25 @@ class ElectroluxEntity(CoordinatorEntity):
         return self.appliance_status.get("properties", {}).get("reported", {})
 
     @property
-    def name(self) -> str:
-        """Return the name of the sensor."""
-        # Translated names resolve through Home Assistant once the entity is on its platform.
-        # Asking earlier would cache a missing name.
-        if self.translation_key and self.platform_data:
+    def name(self) -> str | None:
+        """Return the translated name when this platform has a text for the key, else the generated one."""
+        if (hasattr(self, "_attr_name") and self.platform_data) or self._has_translated_name():
             return super().name
+        return self._fallback_name()
+
+    def _has_translated_name(self) -> bool:
+        """Return True once the entity is on its platform and its key has a name text there.
+
+        Asking before the entity is on its platform would cache a missing name.
+        """
+        platform_data = self.platform_data
+        if not platform_data or not self.translation_key:
+            return False
+        # An empty text counts as missing, as Home Assistant itself treats it when naming.
+        return bool(platform_data.platform_translations.get(self._name_translation_key))
+
+    def _fallback_name(self) -> str:
+        """Return the English name generated from the attribute, the name used before translations."""
         if self.catalog_entry and self.catalog_entry.friendly_name:
             return self.catalog_entry.friendly_name.capitalize()
         return self._name
